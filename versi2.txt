@@ -1,0 +1,45 @@
+Uses WinCrt;
+var j,m,d,dm,sisa,sisa1:integer;
+    pilih:char;
+begin
+repeat
+begin
+ Writeln('Program Konversi Waktu');
+ Writeln('========================');
+ Writeln;
+ Write('Masukkan Jumlah Detik : ');readln(dm);
+ if (dm/3600)>0 then
+    begin
+         j:=dm div 3600;
+         sisa:=dm-(j*3600);
+         writeln('Sisa Detik dari : ',dm,' - 3600',' = ',sisa);
+         writeln('Dibulatkan jadi : ',j);
+   end
+ else
+     begin
+          j:=0;
+          sisa:=dm;
+         writeln('Dibulatkan jadi : ',j);
+     end;
+ if (sisa/60)>0 then
+    begin
+         m:=sisa div 60;
+         sisa1:=sisa-(m*60);
+         writeln('Sisa menit dari : ',sisa,' : 60',' = ',m);
+         writeln('Dibulatkan jadi : ',m);  end
+ else
+     begin
+          m:=0;
+          sisa1:=sisa;
+          writeln('Sisa menit dari : ',sisa,' : 60',' = ',m);
+         writeln('Dibulatkan jadi : ',m);
+     end;
+         d:=sisa1;
+         writeln('Sisa Detik dari : ',d);
+         Writeln('Hasil => ',j,' jam ',m,' menit ',d,' detik');
+writeln;
+write('Lanjutkan : Y / N ? ');readln(pilih);
+end;
+until(pilih='N');
+readkey;
+end.
